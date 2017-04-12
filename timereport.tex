@@ -1,0 +1,166 @@
+\documentclass[12pt,landscape]{article}
+
+\usepackage{url}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{verbatim}
+\usepackage{epstopdf}
+\usepackage{algorithm2e}
+\usepackage{geometry} % to change the page dimensions
+ \geometry{
+ a4paper,
+ landscape,
+ total={297mm,210mm},
+ left=10mm,
+ right=10mm,
+ top=10mm,
+ bottom=10mm,
+ }
+\setlength{\footskip}{0.3in}
+\geometry{margin=2.5cm} % for example, change the margins to 2 inches all round
+\usepackage{rotating}
+\usepackage{multicol}
+\usepackage{multirow}
+\usepackage{wrapfig}
+\usepackage{color, colortbl}
+\usepackage[table]{xcolor}
+\usepackage[absolute,overlay]{textpos}
+\usepackage{tikz}
+\usetikzlibrary{arrows,shapes,positioning,calc,fit,backgrounds}
+\usepackage{cite}
+\usepackage{xspace}
+\usepackage{amsmath,amssymb}
+\usepackage{amsfonts}
+\usepackage{longtable}
+\usepackage{booktabs} % for much better looking tables
+\usepackage{array} % for better arrays (eg matrices) in maths
+\usepackage{pgfgantt}
+\usepackage{marvosym}
+\usepackage{ngerman}
+\usepackage[english]{babel}
+\usepackage{multirow}
+\usepackage{hyperref}
+\hypersetup{
+    bookmarks=true,    % show bookmarks bar?
+    pdftitle={presentation: neural programs}
+    pdfauthor={selyunin},                     % author
+    pdfsubject={neural programs paper presentation},        % subject of the document
+    colorlinks=true, % false: boxed links; true: colored links
+	anchorcolor=black,
+	runcolor=red,
+    linkcolor=blue, % color of internal links
+    citecolor=green, % color of links to bibliography
+    filecolor=black, % color of file links
+    urlcolor=purple, % color of external links
+	linkbordercolor=blue, % color of boxes of internal links
+	urlbordercolor=red, % color of boxes external links
+	citebordercolor=red, % color of boxes external links
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\definecolor{dark-green}{RGB}{50,145,35}
+\definecolor{gray}{RGB}{144,144,144}
+\definecolor{orange}{RGB}{255,127,0}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\makeatletter
+\renewcommand{\section}{\@startsection {section}{1}{\z@}%
+  {-1.5ex \@plus -0.5ex \@minus -.1ex}%
+  {0.5ex \@plus.1ex}%
+  {\normalfont\Large\bfseries}}
+\renewcommand{\subsection}{\@startsection{subsection}{2}{\z@}%
+  {-1.25ex\@plus -0.5ex \@minus -.1ex}%
+  {0.5ex \@plus .1ex}%
+  {\normalfont\large\bfseries}}
+\renewcommand{\subsubsection}{\@startsection{subsubsection}{3}{\z@}%
+  {-1.25ex\@plus -0.5ex \@minus -.1ex}%
+  {0.5ex \@plus .1ex}%
+  {\normalfont\normalsize\bfseries}}
+\renewcommand{\paragraph}{\@startsection{paragraph}{4}{\z@}%
+  {0.6ex \@plus.5ex \@minus.1ex}%
+  {-0.5em}%
+  {\normalfont\normalsize\bfseries}}
+\renewcommand{\subparagraph}{\@startsection{subparagraph}{5}{\parindent}%
+  {1.25ex \@plus0.5ex \@minus .1ex}%
+  {-0.5em}%
+  {\normalfont\normalsize\bfseries}}
+% roman numerals commands (rmnum for lowercase, Rmnum for uppercase)
+\newcommand{\rmnum}[1]{\romannumeral #1}
+\newcommand{\Rmnum}[1]{\expandafter\@slowromancap\romannumeral #1@}
+\makeatother
+  \makeatletter\let\expandableinput\@@input\makeatother 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%tletter\let\expandableinput\@@input\makeatother 
+%\input{sections/commands}
+\title{}
+\author{}
+\date{}
+
+\thispagestyle{empty}% Reset page style to 'empty'
+
+\begin{document}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{textblock*}{1.3cm}(26.8cm,2.1cm) % {block width} (coords)
+	\includegraphics[width=\linewidth]{img/tu_logo}
+\end{textblock*}
+\begin{textblock*}{5.2cm}(22.0cm,2.1cm) % {block width} (coords)
+  \begin{center}
+  \scriptsize{\bf Technische Universit{\"a}t Wien\\ Institut f{\"u}r Technische Informatik}
+  \end{center}
+\end{textblock*}
+
+\hspace{-1.5cm}
+\large{Name:} 
+\hspace{0.3cm}\large{\bf Konstantin Selyunin}
+\hspace{2.7cm}\Large{\bf Monthly Timesheet:} 
+\large{
+%this will be replaced with appropriate month: do not modify the line above
+MonthName
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\renewcommand{\arraystretch}{1.2}
+\scriptsize
+\vspace{0.7cm}
+\hspace{-1.5cm}
+\begin{tabular}{ |L{0.6cm}L{1.0cm}|C{6.3cm}|c|c|c|c|C{3.4cm}|c|C{4cm}|c|C{1.8cm}| }
+%\multicolumn{3}{ |c| }{Team sheet} \\
+\rowcolor{blue!20}
+\hline
+\multicolumn{2}{|c|}{\bf Date} &  HARMONIA (845631) FFG project under the program ``IKT der Zukunft'' & {\bf WP} & {\bf Task} & {\bf ACT} & {\bf Hours} & {\bf Other Activities} & {\bf Hours} & %
+{\bf Absence} & {\bf Hours} & {\bf Productive Hours} \\ 
+\hline
+\expandableinput monthData.tex
+\end{tabular}
+
+
+
+\begin{textblock*}{3.6cm}(06.1cm,18.4cm) % {block width} (coords)
+	\includegraphics[width=\linewidth]{img/sample_signature}
+\end{textblock*}
+
+\begin{textblock*}{12.5cm}(01.0cm,17.0cm) % {block width} (coords)
+\vspace{2cm}
+\noindent\begin{tabular}{ll}
+%this will be replaced with the appropriate date: do not modify the line above
+SignatureDate
+& \\[-2ex]% adds space between the two sets of signatures
+\makebox[1.2in]{\hrulefill} & \makebox[2.5in]{\hrulefill}\\
+Date & {\bf Employee signature:} Konstantin Selyunin\\
+\end{tabular}
+\end{textblock*}
+
+\begin{textblock*}{12.5cm}(14.5cm,17.0cm) % {block width} (coords)
+\vspace{2cm}
+\noindent\begin{tabular}{l}
+ \\[-2ex]% adds space between the two sets of signatures
+  \makebox[5.1in]{\hrulefill}\\
+ {\bf Head of Institute/ Project Leader signature:} Univ.Prof. Dipl.-Ing. Dr.rer.nat. Radu Grosu\\
+\end{tabular}
+\end{textblock*}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{document}
